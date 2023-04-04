@@ -44,6 +44,7 @@ I developed this on Ubuntu 20.04 and CentOS. It may work on operating systems bu
 
 ### Dependency management
 If possible, use the singularity container for dependency management. The container the singularity_setup definition sets up is pretty simple, it just holds the conda environment defined in the environment.yml.  
+  
 **IMPORTANT**: It's probably best to build the singularity container on your personal computer and then transfer the conda.sif file that it makes to the main directory in the HPC where the rest of the files in this repo are copied to.  
 
 If the HPC you are working on lets you make conda environments, make sure you check to see how they want you to make them/where to save them first. Most (probably all, really) have instructions about appropriate ways/places to install software.  
