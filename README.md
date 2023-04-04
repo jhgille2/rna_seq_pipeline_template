@@ -24,10 +24,10 @@ The pipeline is not ready to run right out of the gate, theres a few checks and 
 2. Decide on what system you want to use for dependency management.  
   a) Conda: Create a conda environment from the **environment.yml** file with `conda env create -f environment.yml`.  
   b) Singularity: Have to have singularity installed and sudo permissions, then run `sudo singularity build conda.sif singularity_setup`.  
-3. Copy data into appropriate directories.
-  a) ./data: The genome .fa and annotations .gtf file
-  b) ./data/reads: rna seq fastq files
-  c) ./transcriptome: transcriptome .fa file
+3. Copy data into appropriate directories.  
+  a) ./data: The genome .fa and annotations .gtf file  
+  b) ./data/reads: rna seq fastq files  
+  c) ./transcriptome: transcriptome .fa file  
 4. Edit the **_targets.R** file to point to the correct files.  
   a) **genome_file** target should point to the genome .fa file.  
   b) **annotations_file** target should point to the annotations .gtf file  
