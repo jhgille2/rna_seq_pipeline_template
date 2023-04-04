@@ -1,7 +1,7 @@
 # rna_seq_pipeline_template
 WIP reproducible pipeline for rna seq differential expression analysis. 
 
-This repository is set up to be a template for an rna-seq/differential expression analysis to make it easeir to swap out data sources and re-run the analysis. The analysis workflow is currently managed with the [targets](https://books.ropensci.org/targets/) package through R. Dependency management can be done either through [conda](https://docs.conda.io/en/latest/) alone (faster), or through [singularity](https://singularity-userdoc.readthedocs.io/en/latest/) (if available). 
+This repository is set up to be a template for an rna-seq/differential expression analysis to make it easier to swap out data sources and re-run the analysis. The analysis workflow is currently managed with the [targets](https://books.ropensci.org/targets/) package through R. Dependency management can be done either through [conda](https://docs.conda.io/en/latest/) alone (faster), or through [singularity](https://singularity-userdoc.readthedocs.io/en/latest/) (if available). 
 
 ## Directory overview
 **R**: All the R functions used in the pipeline are stored here. There is one file per function.   
