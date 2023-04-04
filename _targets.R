@@ -65,8 +65,7 @@ tar_plan(
 
 ## SECTION: Analysis
 ################################################################################
-    # There seems to be an issue with the genomic.gtf file that prevents 
-    # the transcriptomes from being extracted that (may)
+    
     # Run fastqc on all reads
     tar_file(fastqc,
              do_fastqc(seq_files,
