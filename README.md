@@ -50,7 +50,7 @@ If possible, use the singularity container for dependency management. The contai
 If the HPC you are working on lets you make conda environments, make sure you check to see how they want you to make them/where to save them first. Most (probably all, really) have instructions about appropriate ways/places to install software.  
 
 ### Future work
-This seems to be working pretty well, but long run I think [snakemake](https://snakemake.readthedocs.io/en/stable/) would be better in the long run since it can do everything I can do with targets but also includes way more tools for customizing the workflow and has a large community that actively uses it for bioinformatic analyses specifically. The only reason why I'm not using it right now in this repository is because I'm pretty bad at it right now. My plan is to eventually translate the workflow over to snakemake once I'm as comfortable with it as I am with targets.  
+This seems to be working pretty well, but long run I think [snakemake](https://snakemake.readthedocs.io/en/stable/) would be better since it can do everything I can do with targets but also includes way more tools for customizing the workflow and has a large community that actively uses it for bioinformatic analyses specifically. The only reason why I'm not using it right now in this repository is because I'm pretty bad at writing code with it. My plan is to eventually translate the workflow over to snakemake once I'm as comfortable with it as I am with targets.  
 
 Organizing the files needed for the project in a [PEP](https://pep.databio.org/en/latest/) would be a good idea. This also fits in well with snakemake again as it's directly supported.
 
