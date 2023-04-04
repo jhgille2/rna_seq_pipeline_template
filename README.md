@@ -40,7 +40,7 @@ The pipeline is not ready to run right out of the gate, theres a few checks and 
 ## Notes
 
 ### OS 
-I developed this on Ubuntu 20.04 and CentOS. It may work on operating systems but I'm not sure. 
+I wrote/ran this on Ubuntu 20.04 and CentOS. It may work on operating systems but I'm not sure. 
 
 ### Dependency management
 If possible, use the singularity container for dependency management. The container the singularity_setup definition sets up is pretty simple, it just holds the conda environment defined in the environment.yml.  
