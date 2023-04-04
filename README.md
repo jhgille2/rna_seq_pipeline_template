@@ -17,7 +17,8 @@ This repository is set up to be a template for an rna-seq/differential expressio
 **singularity_setup**: Singularity definition file that can be used to make a singularity container with the conda environemnt defined by **environment.yml**
 
 # Setup
-The pipeline is not ready to run right out of the gate, theres a few checks and things that need to be set up first.   
+The pipeline is not ready to run right out of the gate, theres a few checks and things that need to be set up first.  
+
 0. Clone this directory to an appropriate location with `git clone https://github.com/jhgille2/rna_seq_pipeline_template.git`  
 1. Directories to hold the input/output of the pipeline need to be added. Run `bash make_folders.sh` to add them all at once.  
 2. Decide on what system you want to use for dependency management.  
