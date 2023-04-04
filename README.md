@@ -1,7 +1,7 @@
 # rna_seq_pipeline_template
 WIP reproducible pipeline for rna seq differential expression analysis. 
 
-This repository is set up to be a template for an rna-seq/differential expression analysis to make it easeir to swap out data sources and re-run the analysis. The analysis workflow is currently managed with the [targets](https://books.ropensci.org/targets/) package through R. Dependency management can be done either through conda alone (faster), or through singularity (if available). 
+This repository is set up to be a template for an rna-seq/differential expression analysis to make it easeir to swap out data sources and re-run the analysis. The analysis workflow is currently managed with the [targets](https://books.ropensci.org/targets/) package through R. Dependency management can be done either through [conda](https://docs.conda.io/en/latest/) alone (faster), or through [singularity](https://singularity-userdoc.readthedocs.io/en/latest/) (if available). 
 
 ## Directory overview
 **R**: All the R functions used in the pipeline are stored here. There is one file per function.   
@@ -31,8 +31,18 @@ The pipeline is not ready to run right out of the gate, theres a few checks and 
   a) **genome_file** target should point to the genome .fa file.  
   b) **annotations_file** target should point to the annotations .gtf file  
   c) **transcriptome_file** target should point to the transcriptome .fa file
-5. Modify the `parse_fq_files()` function in the **_targets.R** file as necessary to make a sample table for the workflow. **This part is really important**. The workflow uses a table that has the sample name in the first column, the read 1 fastq file of the paired reads for the sample in the second column, and the read 2 fastq of the paired reads in the third column. If you'd prefer, this function can be replaced by reading in the sample table from a file e.g. `sample_table <- read.csv(sample_table.csv)`. In this case, remove the code that makes the sample table in the file.  
+5. Modify the `parse_fq_files()` function in the **_targets.R** file as necessary to make a sample table for the workflow. **THIS PART IS REALLY IMPORTANT**. The workflow uses a table that has the sample name in the first column, the read 1 fastq file of the paired reads for the sample in the second column, and the read 2 fastq of the paired reads in the third column. If you'd prefer, this function can be replaced by reading in the sample table from a file e.g. `sample_table <- read.csv(sample_table.csv)`. In this case, remove the code that makes the sample table in the file.  
 6. Run the pipeline by submitting the appropriate job to the scheduler.  
   a) conda: `sbatch job_conda.sh`.  
   b) singularity: `sbatch job_singularity.sh`.  
 
+## Notes
+
+### OS 
+I developed this on Ubuntu 20.04 and CentOS. It may work on operating systems but I'm not sure. 
+
+### Dependency management
+If possible, use the singularity container for dependency management. The container the singularity_setup definition sets up is pretty simple, it just holds the conda environment defined in the environment.yml.  
+**IMPORTANT**: It's probably best to build the singularity container on your personal computer and then transfer the conda.sif file that it makes to the main directory in the HPC where the rest of the files in this repo are copied to.  
+
+If the HPC you are working on lets you make conda environments, make sure you check to see how they want you to make them/where to save them first. Most (probably all, really) have instructions about appropriate ways/places to install software.  
