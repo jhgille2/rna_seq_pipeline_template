@@ -23,7 +23,7 @@ The pipeline is not ready to run right out of the gate, theres a few checks and 
 1. Directories to hold the input/output of the pipeline need to be added. Run `bash make_folders.sh` to add them all at once.  
 2. Decide on what system you want to use for dependency management.  
   a) Conda: Create a conda environment from the **environment.yml** file with `conda env create -f environment.yml`.  
-  b) Singularity: Have to have singularity installed and sudo permissions, then run `sudo singularity build conda.sif singularity_setup`.  
+  b) Singularity: Have to have singularity installed and sudo permissions. On your own computer, run `sudo singularity build conda.sif singularity_setup` and then transfer the **conda.sif** container to the HPC directory where the repo was cloned to.    
 3. Copy data into appropriate directories.  
   a) ./data: The genome .fa and annotations .gtf file  
   b) ./data/reads: rna seq fastq files  
