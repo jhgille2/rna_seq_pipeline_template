@@ -4,7 +4,7 @@ index_genome <- function(genome_file, annotations_file, thread_num = 20){
     cmd <- paste(
         "STAR --runThreadN", thread_num,
         "--runMode genomeGenerate",
-        "--genomeSAindexNbases 12",
+        "--genomeSAindexNbases 14",
         "--genomeDir starindices/ --genomeFastaFiles", genome_file,
         "--sjdbGTFfile", annotations_file,
         "--sjdbOverhang 100"
