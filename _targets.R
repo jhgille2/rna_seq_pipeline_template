@@ -32,8 +32,7 @@ parse_fq_files <- function(fq_file_name) {
 # Sample table with paths to reads for static branching over paired reads
 paired_reads_table <- map(list.files(here::here("data", "reads")), parse_fq_files) %>% # nolint
     purrr::reduce(bind_rows) %>%
-    pivot_wider(names_from = read_num, values_from = full_name, names_prefix = "read_") %>% # nolint 
-    dplyr::filter(!sample_name %in% c("Gm_SA_Rep5", "Gm_SA_Rep2"))
+    pivot_wider(names_from = read_num, values_from = full_name, names_prefix = "read_")
 
 # A table with just the sample names
 sample_table <- paired_reads_table %>%
