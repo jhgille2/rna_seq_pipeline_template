@@ -7,7 +7,7 @@ index_genome <- function(genome_file, annotations_file, thread_num = 20){
         "--genomeSAindexNbases 12",
         "--genomeDir starindices/ --genomeFastaFiles", genome_file,
         "--sjdbGTFfile", annotations_file,
-        "--sjdbOverhang 36"
+        "--sjdbOverhang 100"
     )
 
     system(cmd)
